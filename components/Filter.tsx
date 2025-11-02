@@ -30,7 +30,16 @@ const Filter = ({ categories }: { categories: Category[] }) => {
                 <TouchableOpacity
                     key={item.$id}
                     className={cn('filter', active === item.$id ? 'bg-amber-500' : 'bg-white')}
-                    style={Platform.OS === 'android' ? { elevation: 5, shadowColor: '#878787'} : {}}
+                    style={Platform.select({
+                        web: {
+                            boxShadow: '0 2px 4px rgba(135, 135, 135, 0.2)',
+                        },
+                        android: {
+                            elevation: 5,
+                            shadowColor: '#878787',
+                        },
+                        default: {},
+                    })}
                     onPress={() => handlePress(item.$id)}
                 >
                     <Text className={cn('body-medium', active === item.$id ? 'text-white' : 'text-gray-200')}>{item.name}</Text>

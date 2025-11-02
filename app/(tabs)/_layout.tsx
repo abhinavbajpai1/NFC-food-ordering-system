@@ -1,7 +1,7 @@
 import {Redirect, Slot, Tabs} from "expo-router";
 import useAuthStore from "@/store/auth.store";
 import {TabBarIconProps} from "@/type";
-import {Image, Text, View} from "react-native";
+import {Image, Text, View, Platform} from "react-native";
 import {images} from "@/constants";
 import cn from "clsx";
 
@@ -33,11 +33,15 @@ export default function TabLayout() {
                     position: 'absolute',
                     bottom: 40,
                     backgroundColor: 'white',
-                    shadowColor: '#1a1a1a',
-                    shadowOffset: { width: 0, height: 2 },
-                    shadowOpacity: 0.1,
-                    shadowRadius: 4,
-                    elevation: 5
+                    ...(Platform.OS === 'web' ? {
+                        boxShadow: '0 -2px 4px rgba(26, 26, 26, 0.1)',
+                    } : {
+                        shadowColor: '#1a1a1a',
+                        shadowOffset: { width: 0, height: 2 },
+                        shadowOpacity: 0.1,
+                        shadowRadius: 4,
+                        elevation: 5,
+                    }),
                 }
             }}>
             <Tabs.Screen

@@ -66,7 +66,9 @@ export const signIn = async ({ email, password }: SignInParams) => {
 export const getCurrentUser = async () => {
     try {
         const currentAccount = await account.get();
-        if(!currentAccount) throw Error;
+        if(!currentAccount) {
+            return null;
+        }
 
         const currentUser = await databases.listDocuments(
             appwriteConfig.databaseId,
@@ -74,12 +76,29 @@ export const getCurrentUser = async () => {
             [Query.equal('accountId', currentAccount.$id)]
         )
 
-        if(!currentUser) throw Error;
+        if(!currentUser || currentUser.documents.length === 0) {
+            return null;
+        }
 
         return currentUser.documents[0];
-    } catch (e) {
-        console.log(e);
-        throw new Error(e as string);
+    } catch (e: any) {
+        // Handle AppwriteException for missing scopes (user not authenticated)
+        // This happens when user is a guest or doesn't have a valid session
+        if (
+            e?.code === 401 || 
+            e?.type === 'general_unauthorized_scope' ||
+            e?.message?.includes('missing scopes') || 
+            e?.message?.includes('User (role: guests)') ||
+            e?.message?.includes('Unauthorized')
+        ) {
+            // User is not authenticated, return null instead of throwing
+            return null;
+        }
+        
+        // For other errors, log but don't throw to prevent app crashes
+        // This allows the app to continue working even if there's an unexpected error
+        console.log('getCurrentUser error:', e);
+        return null;
     }
 }
 

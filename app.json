@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "fast_food",
-    "slug": "fast_food",
+    "name": "Tap2Eat",
+    "slug": "tap2eat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "fastfood",
+    "scheme": "tap2eat",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -24,7 +24,8 @@
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
         "NFC"
-      ]
+      ],
+      "package": "com.anonymous.tap2eat"
     },
     "web": {
       "bundler": "metro",
@@ -55,7 +56,14 @@
           "project": "jsm_reactnative_food-ordering",
           "organization": "jsmpro"
         }
-      ]
+      ],
+      [
+        "react-native-nfc-manager",
+        {
+          "includeNdefEntitlement": false
+        }
+      ],
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true

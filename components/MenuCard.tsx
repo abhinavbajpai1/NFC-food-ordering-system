@@ -8,7 +8,19 @@ const MenuCard = ({ item: { $id, image_url, name, price }}: { item: MenuItem}) =
     const { addItem } = useCartStore();
 
     return (
-        <TouchableOpacity className="menu-card" style={Platform.OS === 'android' ? { elevation: 10, shadowColor: '#878787'}: {}}>
+        <TouchableOpacity 
+            className="menu-card" 
+            style={Platform.select({
+                web: {
+                    boxShadow: '0 10px 15px rgba(135, 135, 135, 0.3)',
+                },
+                android: {
+                    elevation: 10,
+                    shadowColor: '#878787',
+                },
+                default: {},
+            })}
+        >
             <Image source={{ uri: imageUrl }} className="size-32 absolute -top-10" resizeMode="contain" />
             <Text className="text-center base-bold text-dark-100 mb-2" numberOfLines={1}>{name}</Text>
             <Text className="body-regular text-gray-200 mb-4">From ${price}</Text>

@@ -1,6 +1,7 @@
 import {SafeAreaView} from "react-native-safe-area-context";
 import { FlatList, Image, Pressable, Text, TouchableOpacity, View} from "react-native";
 import {Fragment} from "react";
+import { router } from "expo-router";
 import cn from 'clsx';
 
 import CartButton from "@/components/CartButton";
@@ -12,6 +13,11 @@ import useAuthStore from "@/store/auth.store";
 export default function Index() {
   const { user } = useAuthStore();
 
+  const handleOfferPress = () => {
+    // Navigate to search/menu screen when offer is tapped
+    router.push('/search');
+  };
+
   return (
       <SafeAreaView className="flex-1 bg-white">
           <FlatList
@@ -22,6 +28,7 @@ export default function Index() {
                   return (
                       <View className="px-5">
                           <Pressable
+                              onPress={handleOfferPress}
                               className={cn("offer-card", isEven ? 'flex-row-reverse' : 'flex-row')}
                               style={{ backgroundColor: item.color }}
                               android_ripple={{ color: "#fffff22"}}

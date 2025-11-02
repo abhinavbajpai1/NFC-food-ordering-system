@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity, ActivityIndicator, Image, Linking, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { router } from 'expo-router';
 import LocationService from '@/lib/location.service';
 import { getStores } from '@/lib/appwrite';
 import { Store } from '@/type';
@@ -82,8 +83,17 @@ export default function StoresScreen() {
     }
   };
 
+  const handleStorePress = (store: StoreWithDistance) => {
+    // Navigate to search/menu screen when store is tapped
+    router.push('/search');
+  };
+
   const renderStore = ({ item }: { item: StoreWithDistance }) => (
-    <View className="bg-white rounded-xl p-4 mb-4 shadow-sm border border-gray-100">
+    <TouchableOpacity 
+      onPress={() => handleStorePress(item)}
+      activeOpacity={0.8}
+      className="bg-white rounded-xl p-4 mb-4 shadow-sm border border-gray-100"
+    >
       <View className="flex-between flex-row mb-3">
         <View className="flex-1">
           <Text className="h3-bold text-dark-100 mb-1">{item.name}</Text>
@@ -136,11 +146,11 @@ export default function StoresScreen() {
             onPress={() => callStore(item.phone)}
             className="bg-primary-50 rounded-lg px-4 py-3 flex-center"
           >
-            <Image source={images.bag} className="size-5" tintColor="#FE8C00" />
+            <Image source={images.phone} className="size-5" tintColor="#FE8C00" />
           </TouchableOpacity>
         )}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 
   if (isLoading) {

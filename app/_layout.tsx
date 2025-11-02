@@ -42,9 +42,20 @@ export default Sentry.wrap(function RootLayout() {
     fetchAuthenticatedUser()
   }, []);
 
+  // Initialize Sentry Feedback Widget after component mounts
+  useEffect(() => {
+    // Only show feedback widget in web environment
+    if (typeof window !== 'undefined') {
+      try {
+        Sentry.showFeedbackWidget();
+      } catch (error) {
+        // Silently ignore if feedback widget is not available
+        console.debug('Sentry Feedback Widget not available:', error);
+      }
+    }
+  }, []);
+
   if(!fontsLoaded || isLoading) return null;
 
   return <Stack screenOptions={{ headerShown: false }} />;
 });
-
-Sentry.showFeedbackWidget();
