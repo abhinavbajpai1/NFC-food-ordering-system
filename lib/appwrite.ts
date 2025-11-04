@@ -160,3 +160,17 @@ export const getMenuItemById = async (itemId: string) => {
         throw new Error(e as string);
     }
 }
+
+export const getMenuItemsByStore = async (storeId: string) => {
+    try {
+        const menuItems = await databases.listDocuments(
+            appwriteConfig.databaseId,
+            appwriteConfig.menuCollectionId,
+            [Query.equal('storeId', storeId)]
+        )
+
+        return menuItems.documents;
+    } catch (e) {
+        throw new Error(e as string);
+    }
+}
