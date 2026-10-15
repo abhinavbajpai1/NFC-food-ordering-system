@@ -92,9 +92,6 @@ assets/       # Images and fonts
 - Favorites / wishlist
 - Restaurant ratings and reviews
 
-## 🙏 Acknowledgements
-
-This project was built while following the JavaScript Mastery food ordering tutorial, which provided the base architecture and design. Credit to the original author, [Adrian Hajdin](https://github.com/adrianhajdin/food_ordering).
 
 ## 👤 Author
 
