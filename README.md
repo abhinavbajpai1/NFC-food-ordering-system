@@ -1,126 +1,102 @@
-<div align="center">
-  <br />
-    <a href="https://www.youtube.com/watch?v=LKrX390fJMw" target="_blank">
-      <img src="assets/readme/hero.png" alt="Project Banner">
-    </a>
-  <br />
+# 🍔 Tap2Eat
 
-  <div>
-    <img src="https://img.shields.io/badge/-React_Native-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="React Native" />
-    <img src="https://img.shields.io/badge/-Expo-black?style=for-the-badge&logoColor=white&logo=expo&color=000020" alt="Expo" />
-        <img src="https://img.shields.io/badge/-Appwrite-black?style=for-the-badge&logoColor=white&logo=appwrite&color=F02E65" alt="Appwrite" />
-    <img src="https://img.shields.io/badge/-Tailwind-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="Tailwind" />
-    <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="TypeScript" />
-  </div>
+**A cross-platform food ordering app: browse, search, add to cart, and order in a few taps.**
 
-  <h3 align="center">Food Delivery Mobile App</h3>
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-000020?style=flat-square&logo=expo&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![NativeWind](https://img.shields.io/badge/NativeWind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Appwrite](https://img.shields.io/badge/Appwrite-F02E65?style=flat-square&logo=appwrite&logoColor=white)
 
+---
 
-</div>
+## 📌 About
 
-## 📋 <a name="table">Table of Contents</a>
+Tap2Eat is a mobile food delivery app I built to get hands-on with a complete React Native workflow: authentication, a real backend, global state, navigation, and error monitoring. Users sign in with Google, explore dishes by category or keyword, view item details, and manage a cart, all backed by Appwrite for data and file storage.
 
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets](#links)
-6. 🚀 [More](#more)
+## ✨ Features
 
+- **Google sign-in**: quick, secure authentication
+- **Home**: latest offers, with shortcuts into filtered results
+- **Search**: keyword search plus category filters across the full menu
+- **Item details**: images, description, and add-to-cart
+- **Cart**: review items and see the running total
+- **Profile**: manage account details and preferences
+- **Backend**: menu data and images served from Appwrite
 
+## 🛠 Tech Stack
 
-## <a name="introduction">🤖 Introduction</a>
+| Layer | Tools |
+|---|---|
+| App framework | React Native, Expo (Expo Router) |
+| Language | TypeScript |
+| Styling | NativeWind (Tailwind CSS for React Native) |
+| Backend | Appwrite (auth, database, storage) |
+| State | Zustand |
+| Monitoring | Sentry |
 
-Built with React Native, TypeScript, and Tailwind CSS, this full-stack Food Delivery app features Google Authentication, dynamic search and filters, cart functionality, and smooth navigation. Powered by Appwrite for backend, database, and file storage, it delivers a responsive, scalable, and intuitive user experience with modern UI/UX best practices.
+## 🚀 Getting Started
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
+### Prerequisites
 
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) and npm
+- Expo Go app on your phone (or an Android/iOS emulator)
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
-
-- **[Appwrite](https://jsm.dev/rn25-appwrite)** is an open-source backend-as-a-service platform offering secure authentication (email/password, OAuth, SMS, magic links), databases, file storage with compression/encryption, real-time messaging, serverless functions, and static site hosting via Appwrite Sites—all managed through a unified console and microservices architecture.
-
-- **[Expo](https://expo.dev/)** is an open-source platform for building universal native apps (Android, iOS, web) using JavaScript/TypeScript and React Native. It features file-based routing via Expo Router, fast refresh, native modules for camera/maps/notifications, over-the-air updates (EAS), and streamlined app deployment.
-
-- **[NativeWind](https://www.nativewind.dev/)** brings Tailwind CSS to React Native and Expo, allowing you to style mobile components using utility-first classes for fast, consistent, and responsive UI design.
-
-- **[React Native](https://reactnative.dev/)** is a framework for building mobile UIs with React. It enables component‑based, cross-platform development with declarative UI, deep native API support, and is tightly integrated with Expo for navigation and native capabilities.
-
-- **[Tailwind CSS](https://tailwindcss.com/)** is a utility-first CSS framework enabling rapid UI design via low-level classes. In React Native/Expo, it’s commonly used with NativeWind to apply Tailwind-style utilities to mobile components.
-
-- **[TypeScript](https://www.typescriptlang.org/)** is a statically-typed superset of JavaScript providing type annotations, interfaces, enums, generics, and enhanced tooling. It improves error detection, code quality, and scalability—ideal for robust, maintainable projects.
-
-- **[Zustand](https://github.com/pmndrs/zustand)** is a minimal, hook-based state management library for React and React Native. It lets you manage global state with zero boilerplate, no context providers, and excellent performance through selective state subscriptions.
-
-- **[Sentry](https://jsm.dev/rn-food-sentry)** is a powerful error tracking and performance monitoring tool for React Native apps. It helps you detect, diagnose, and fix issues in real-time to improve app stability and user experience.
-
-
-
-## <a name="features">🔋 Features</a>
-
-### Features of the Mobile Movie AppProject
-
-👉 **Google Authentication**: Secure and seamless user sign-ins using Google.  
-
-👉 **Home Page**: Showcases the latest offers and directs users to filtered search results.  
-
-👉 **Search Page**: Lets users explore all foods with category filters and keyword search.  
-
-👉 **Product Details Page**: Displays food images, key details, and allows adding items to the cart.  
-
-👉 **Cart Page**: Review selected items and see the total price.  
-
-👉 **Profile Page**: Manage user settings and preferences.  
-
-👉 **Appwrite Integration**: Handles backend database and file storage for food items.
-
-and many more, including code architecture and reusability.
-
-## <a name="quick-start">🤸 Quick Start</a>
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
-
-- **[Git](https://git-scm.com/)**
-- **[Node.js](https://nodejs.org/en)**
-- **[npm](https://www.npmjs.com/)** _(Node Package Manager)_
-
-**Cloning the Repository**
+### Setup
 
 ```bash
-git clone https://github.com/adrianhajdin/food_ordering.git
-cd food_ordering
-```
+# 1. Clone the repo
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
 
-**Installation**
-
-Install the project dependencies using npm:
-
-```bash
+# 2. Install dependencies
 npm install
 ```
 
-**Set Up Environment Variables**
+### Environment variables
 
-Create a new file named `.env` in the root of your project and add the following content:
+Create a `.env` file in the project root:
 
 ```env
-EXPO_PUBLIC_APPWRITE_PROJECT_ID=
-EXPO_PUBLIC_APPWRITE_ENDPOINT=
+EXPO_PUBLIC_APPWRITE_PROJECT_ID=your_project_id
+EXPO_PUBLIC_APPWRITE_ENDPOINT=your_appwrite_endpoint
 ```
 
-Replace the placeholder values with your actual credentials by signing up on the **[Appwrite](https://jsm.dev/rn25-appwrite)** dashboard.
+Get both values from your [Appwrite](https://appwrite.io/) project dashboard.
 
-**Running the Project**
+### Run
 
 ```bash
 npx expo start
 ```
 
-Open your ExpoGO app on your phone and scan the QR code to view the project.
+Scan the QR code with Expo Go to open the app on your device.
 
+## 🗂 Project Structure
 
+```
+app/          # Screens and routes (Expo Router)
+components/   # Reusable UI components
+lib/          # Appwrite config and helpers
+store/        # Zustand stores
+assets/       # Images and fonts
+```
+
+> Adjust this section to match your actual folders.
+
+## 🔮 Future Improvements
+
+- Order history and live order tracking
+- Payment gateway integration
+- Favorites / wishlist
+- Restaurant ratings and reviews
+
+## 🙏 Acknowledgements
+
+This project was built while following the JavaScript Mastery food ordering tutorial, which provided the base architecture and design. Credit to the original author, [Adrian Hajdin](https://github.com/adrianhajdin/food_ordering).
+
+## 👤 Author
+
+**Abhinav Bajpai**
+[LinkedIn](https://www.linkedin.com/in/abhinav-bajpai23071002176/) · [Portfolio](https://abhinavbajpai1.github.io/PersonalPortfolio/)
